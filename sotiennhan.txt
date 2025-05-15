@@ -15,13 +15,13 @@ from telebot.types import Message
 from telebot import TeleBot
 
 pass #logging.basicConfig(level=logging.INFO)
-group_chat_id = -1002214423406
+group_chat_id = -1002229762287
 user_balance = {}
-admin_users = [5404649016]
+admin_users = [6804206350]
 
 # API Key from BotFather
-API_KEY = '7392247332:AAGAM69sDhwTY7DD7mH3-8G55BuHts6OraE'
-API_KEY1 = '7398456275:AAELZWsoXaxB1h6vsxN1DL1Zh54d_ri0kmA'
+API_KEY = '7119238900:AAGFyewrMSJopccftIPkhLyeOvld2ORE5nA'
+API_KEY1 = '7123999803:AAH-Uke4QNURThfQND_Zwarh4h9MdUJcE3M'
 bot = telebot.TeleBot(API_KEY, parse_mode=None)
 bot2 = telebot.TeleBot(API_KEY1, parse_mode=None)
 
@@ -169,7 +169,7 @@ def start(message: Message):
     button_cachdung = InlineKeyboardButton('🗒 Gạch Thẻ Cào', callback_data='cachdung')
     button_chietkhau = InlineKeyboardButton('📇 Xem Chiết Khấu', callback_data='checkchietkhau')
     button_lichsu = InlineKeyboardButton('📜 Lịch Sử Đổi Thẻ', callback_data='historythe')
-    button_gruop = InlineKeyboardButton('🔔 Kênh Thông Báo',  url='https://t.me/tienthanhsub1')
+    button_gruop = InlineKeyboardButton('🔔 Kênh Thông Báo',  url='https://t.me/vankhadev')
     button_taikhoan = InlineKeyboardButton('👤 Tài Khoản', callback_data='taikhoan')
     button_hoahong = InlineKeyboardButton('🍀 Kiếm Tiền', callback_data='show_hoahong')
     markup.add(button_cachdung, button_chietkhau, button_lichsu, button_gruop, button_taikhoan, button_hoahong)
@@ -258,8 +258,8 @@ def handle_gt_command(message: Message):
         serial = parts[3]
         amount = parts[4]
 
-        partner_key = 'b1d4a6afdda24d28f5ccb474f84bf56c'
-        partner_id = '11149012502'
+        partner_key = '9703bcd87baa9b4227b337d66c99818c'
+        partner_id = '40974027169'
         command = 'charging'
         request_id = random.randint(100000000, 999999999)
 
@@ -311,10 +311,10 @@ def check_card_status():
         data = json.load(file)
 
 
-    partner_key = 'b1d4a6afdda24d28f5ccb474f84bf56c'
+    partner_key = '9703bcd87baa9b4227b337d66c99818c'
     code = data.get('code')
     command = 'check'
-    partner_id = '11149012502'
+    partner_id = '40974027169'
     request_id = data.get('request_id')
     serial = data.get('serial')
     telco = data.get('telco')
@@ -664,7 +664,7 @@ def show_rutbank(call):
 
 <b>/rutbank[dấu cách]tên ngân hàng[dấu cách]số tài khoản[dấu cách]chủ tài khoản[dấu cách]số tiền</b>
 
-<b>Ví Dụ: /rutbank MBank 0345550985 TRANTIENTHANH 100000</b>
+<b>Ví Dụ: /rutbank MBank 0345550985 PHAN VAN KHA 100000</b>
 
 <b>Min Rút: 10.000k Max Rút: 50.000.000k [Phí rút: 1,000]</b>
 ''', reply_markup=markup1, parse_mode='HTML')
@@ -965,7 +965,7 @@ def show_hoahong(call):
     user_id = call.from_user.id
     threading.Timer(3, lambda: bot.delete_message(call.message.chat.id, call.message.message_id)).start()
 
-    aff_link = f"https://t.me/tienthanh309_bot?start={user_id}"
+    aff_link = f"https://t.me/thongbaogachthe?start={user_id}"
     short_link = shorten_url(aff_link)
 
     total_commission = get_total_commission(user_id)
