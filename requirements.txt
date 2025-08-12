@@ -1,4 +1,2 @@
-customtkinter
-Pillow
-undetected-chromedriver
-selenium
+python-telegram-bot==21.4
+requests==2.31.0
